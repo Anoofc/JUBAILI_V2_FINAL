@@ -588,7 +588,7 @@ void process_data(String btdata) {
     if (energystorage_status == 1 && utility_status == 0 && genset_status == 0){ current_led_number_1 = 0; strip_1.clear(); strip_1.show(); dmx.write(SUNBOX, 0); current_led_number_2 = 0; strip_2.clear(); strip_2.show(); dmx.write(SOLARBOX, 0); current_led_number_3 = 0; strip_3.clear(); strip_3.show(); dmx.write(INVERTERBOX, 0); current_led_number_5 = 0; strip_5.clear(); strip_5.show(); dmx.update(); }
     
   }
-
+  
 }
 
 
