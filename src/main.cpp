@@ -1,7 +1,7 @@
 #define DEBUG 0
 
 #define BTDEVICE_NAME "JBros"
-#define BAUDRATE 115200
+#define BAUDRATE      115200
 
 #define LED_PIN_1 22    // SUN
 #define LED_PIN_2 21    // SOLAR
@@ -44,7 +44,7 @@
 
 #define NUMBER_OF_ON_LED_FOR_STRIP_2 4
 #define NUMBER_OF_OFF_LED_FOR_STRIP_2 8
-#define TIME_DELAY_FOR_RUNNING_SPEED_FOR_STRIP_2_IN_us 90000
+#define TIME_DELAY_FOR_RUNNING_SPEED_FOR_STRIP_2_IN_us 70000
 
 #define NUMBER_OF_ON_LED_FOR_STRIP_3 4
 #define NUMBER_OF_OFF_LED_FOR_STRIP_3 8
@@ -66,7 +66,7 @@
 #define NUMBER_OF_OFF_LED_FOR_STRIP_7 8
 #define TIME_DELAY_FOR_RUNNING_SPEED_FOR_STRIP_7_IN_us 70000
 
-#define NUMBER_OF_ON_LED_FOR_STRIP_8 4
+#define NUMBER_OF_ON_LED_FOR_STRIP_8  4
 #define NUMBER_OF_OFF_LED_FOR_STRIP_8 8
 #define TIME_DELAY_FOR_RUNNING_SPEED_FOR_STRIP_8_IN_us 70000
 
@@ -341,6 +341,7 @@ void load(uint8_t r, uint8_t g, uint8_t b)
   strip_7.show();
   last_updated_time_for_strip_7 = micros();
 }
+
 void mainline(uint8_t r, uint8_t g, uint8_t b)
 {
   if (micros() - last_updated_time_for_strip_8 < TIME_DELAY_FOR_RUNNING_SPEED_FOR_STRIP_8_IN_us) {
@@ -408,7 +409,6 @@ void sunButton() {
 //    dmx.write(LOADBOX, BRIGHTNESS);
 //    sunflag = 5;
 //  }
-  
 }
 
 uint8_t uflag = 0; 
@@ -434,8 +434,8 @@ void utilityButton() {
     
     if (uflag ==3){dmx.write(LOADBOX, BRIGHTNESS); dmx.update(); utilityflag = 3; uflag = 4;}
   }
- 
 }
+
 uint8_t gflag = 0;
 void genSetButton() {
   if (gflag ==0){ dmx.write(GENSETBOX, BRIGHTNESS); dmx.update();  gflag = 1; }
